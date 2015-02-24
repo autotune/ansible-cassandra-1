@@ -3,7 +3,7 @@
 
 
 #provision nodes
-ansible-playbook -i scripts/rax.py config/nodetool-server.yml -f 20
+ansible-playbook config/nodetool-server.yml -f 20
 
 #configure nodes
 ansible-playbook -i scripts/rax.py config/nodetool.yml -f 20
