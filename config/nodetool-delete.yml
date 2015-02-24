@@ -12,7 +12,7 @@
         image: ubuntu-1410-utopic-unicorn-pvhvm
         region: "{{ item.value.region }}"
         wait: yes
-        state: present
+        state: absent
         group: nodetool
         count: "{{ item.value.node_count }}"
         files:
