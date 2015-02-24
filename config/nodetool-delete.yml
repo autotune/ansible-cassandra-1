@@ -1,8 +1,8 @@
-- name: Build Nodetool Node
+- name: Delete Nodetool Nodes
   gather_facts: False
   hosts: localhost
   tasks:
-    - name: Build Nodetool Node
+    - name: Delete Nodetool Nodes
       local_action:
         module: rax
         credentials: ~/.rackspace_cloud_credentials
@@ -12,7 +12,7 @@
         image: ubuntu-1410-utopic-unicorn-pvhvm
         region: "{{ item.value.region }}"
         wait: yes
-        state: absent
+        state: present
         group: nodetool
         count: "{{ item.value.node_count }}"
         files:

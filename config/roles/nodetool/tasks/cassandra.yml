@@ -1,20 +1,6 @@
 ---
-- name: stop cassandra from running with default config
-  template: src=policy-rc.d.j2 dest=/usr/sbin/policy-rc.d mode=0755
-  tags:
-     - configuration
-
 - name: Install Cassandra
   apt: pkg=cassandra update-cache=yes force=yes state=present
   register: cassandra_install
   tags:
     - packages
-
-- name: Install Cassandra Java Config File
-  template: src=cassandra-{{cassandra.version_branch}}-env.j2 dest=/etc/cassandra/cassandra-env.yaml
-  notify: stop cassandra
-  tags:
-    - configuration
-
-- name: remove policy-rc.d file
-  file: path=/usr/sbin/policy-rc.d state=absent
