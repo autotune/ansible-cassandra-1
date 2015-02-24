@@ -1,0 +1,6 @@
+- name: Configure DB Servers
+  user: vagrant
+  hosts: all
+  sudo: yes
+  roles:
+    - db

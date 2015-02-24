@@ -1,0 +1,5 @@
+- name: Configure Nodetool Server
+  hosts: nodetool
+  user: root
+  roles:
+    - nodetool

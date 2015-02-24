@@ -3,7 +3,7 @@
 
 
 #provision nodes
-ansible-playbook config/db-server.yml -f 20
+ansible-playbook -i scripts/rax.py config/db-server.yml -f 20
 
 #configure nodes
 ansible-playbook -i scripts/rax.py config/db.yml -f 20

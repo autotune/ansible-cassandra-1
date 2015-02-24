@@ -1,0 +1,12 @@
+---
+- name: Apt-get Update
+  apt: update_cache=yes upgrade=dist
+
+- name: Install curl
+  apt: name=curl state=installed
+
+- name: Install Vim
+  apt: name=vim state=installed
+
+- name: Configure Vim as default
+  shell: update-alternatives --set editor /usr/bin/vim.basic

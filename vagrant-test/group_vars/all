@@ -19,7 +19,6 @@ cassandra_2_1:
 
 config:
   cluster_name: 'MyCluster'
-  node_name: 'cass-node'
   data_file_directories:
     - '/var/lib/cassandra/data'
   commitlog_directory: '/var/lib/cassandra/commitlog'
@@ -27,25 +26,3 @@ config:
   log_level: 'info'
   java_max_heap_size: '512M'
   java_max_heap_newsize: '100M'
-
-cluster_opts:
-  iad_cluster:
-    region: "IAD"
-    node_count: 3
-  dfw_cluster:
-    region: "DFW"
-    node_count: 3
-  ord_cluster:
-    region: "ORD"
-    node_count: 3
-
-nodetool_opts:
-  iad_nodetool:
-    region: "IAD"
-    node_count: 1
-  dfw_nodetool:
-    region: "DFW"
-    node_count: 1
-  ord_nodetool:
-    region: "ORD"
-    node_count: 1

@@ -1,0 +1,24 @@
+---
+# Needed for add-apt-repository
+- name: Install python-software-properties
+  apt: pkg=python-software-properties state=installed
+  tags:
+    - apt
+
+- name: Add Cassandra 1.2 repository
+  apt_repository: repo='{{ cassandra_1_2.repo }}' state=present
+  when: cassandra.version_branch == '1.2'
+  tags:
+    - apt
+
+- name: Add Cassandra 2.0 repository
+  apt_repository: repo='{{ cassandra_2_0.repo }}' state=present
+  when: cassandra.version_branch == '2.0'
+  tags:
+    - apt
+
+- name: Add Cassandra 2.1 repository
+  apt_repository: repo='{{ cassandra_2_1.repo }}' state=present
+  when: cassandra.version_branch == '2.1'
+  tags:
+    - apt
