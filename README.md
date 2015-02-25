@@ -47,10 +47,11 @@ ansible-cassandra/
 │               └───dependencies.yml
 │               └───repository.yml
 │           └───templates/
-│               └───mcassandra-2.1.j2
+│               └───cassandra-2.1.j2
 │               └───cassandra-2.0.j2
 │               └───cassandra-1.2.j2
 │               └───cassandra-2.1-env.j2
+│               └───cassandra-topology.yml
 │               └───policy-rc.d.j2
 │               └───ufw.j2
 │               └───log4j-server.properties
@@ -80,6 +81,7 @@ ansible-cassandra/
         │       └───cassandra-2.0.j2
         │       └───cassandra-1.2.j2
         │       └───cassandra-2.1-env.j2
+        │       └───cassandra-topology.yml
         │       └───policy-rc.d.j2
         │       └───ufw.j2
         │       └───log4j-server.properties
