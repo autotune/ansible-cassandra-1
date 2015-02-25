@@ -21,6 +21,7 @@ Installs and configures N number of Cassandra nodes in a cluster on Rackspace Pu
 1. ``` bash prov.sh ```
 
 ## Directory structure
+```
 ansible-cassandra/
 ├───ansible.cfg
 ├───provision.sh
@@ -91,3 +92,4 @@ ansible-cassandra/
                 └───cassandra.yml
                 └───dependencies.yml
                 └───repository.yml
+```
