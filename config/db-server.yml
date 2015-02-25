@@ -31,4 +31,4 @@
         ansible_ssh_pass: "{{ item.rax_adminpass }} "
         groupname: db
       with_items: rax.success
-      when: rax.action =='create'
+      when: rax.action == 'create'
