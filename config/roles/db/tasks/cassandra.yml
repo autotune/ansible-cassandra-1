@@ -15,6 +15,11 @@
   tags:
     - configuration
 
+- name: Install Cassandra DC config file
+  template: src=cassandra-topology.yml dest=/etc/cassandra/cassandra-topology.yml
+  tags:
+  - configuration
+
 - name: Install Cassandra Java Config File
   template: src=cassandra-{{cassandra.version_branch}}-env.j2 dest=/etc/cassandra/cassandra-env.yaml
   tags:

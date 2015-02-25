@@ -2,9 +2,9 @@
 
 ufw allow 22/tcp
 {% for host in groups['db'] %}
-ufw allow from {{ hostvars[host]['rax_addresses']['private'][0]['addr'] }} to any port 7000
-ufw allow from {{ hostvars[host]['rax_addresses']['private'][0]['addr'] }} to any port 9160
-ufw allow from {{ hostvars[host]['rax_addresses']['private'][0]['addr'] }} to any port 9042
-ufw allow from {{ hostvars[host]['rax_addresses']['private'][0]['addr'] }} to any port 7199
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 7000
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 9160
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 9042
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 7199
 {% endfor %}
 ufw --force enable

@@ -20,4 +20,74 @@ Installs and configures N number of Cassandra nodes in a cluster on Rackspace Pu
 ## Installation
 1. ``` bash prov.sh ```
 
-
+## Directory structure
+ansible-cassandra/
+├───ansible.cfg
+├───provision.sh
+├───nodetool-prov.sh
+├───ping.sh
+├───cluster-delete.sh
+├───nodetool-delete.sh
+├───scripts/
+│   └───rax.py
+├───vagrant-test/
+│   └───Vagrantfile
+│   └───db.yml
+│   └───group_vars/
+│       └───all
+│   └───roles/
+│       └───db/
+│           └───handlers/
+│               └───main.yml
+│           └───tasks/
+│               └───main.yml
+│               └───common.yml
+│               └───cassandra.yml
+│               └───dependencies.yml
+│               └───repository.yml
+│           └───templates/
+│               └───mcassandra-2.1.j2
+│               └───cassandra-2.0.j2
+│               └───cassandra-1.2.j2
+│               └───cassandra-2.1-env.j2
+│               └───policy-rc.d.j2
+│               └───ufw.j2
+│               └───log4j-server.properties
+│
+├───config/
+    └───db-server.yml
+    └───db.yml
+    └───delete_db.yml
+    └───nodetool-server.yml
+    └───nodetool.yml
+    └───nodetool-delete.yml
+    └───group_vars/
+    │   └───all
+    └───roles/
+        └───db/
+        │   └───files/
+        │   └───handlers/
+        │   │   └───main.yml
+        │   └───tasks/
+        │   │   └───main.yml
+        │   │   └───common.yml
+        │   │   └───cassandra.yml
+        │   │   └───dependencies.yml
+        │   │   └───repository.yml
+        │   └───templates/
+        │       └───cassandra-2.1.j2
+        │       └───cassandra-2.0.j2
+        │       └───cassandra-1.2.j2
+        │       └───cassandra-2.1-env.j2
+        │       └───policy-rc.d.j2
+        │       └───ufw.j2
+        │       └───log4j-server.properties
+        └───nodetool/
+            └───handlers/
+            │   └───main.yml
+            └───tasks/
+                └───main.yml
+                └───common.yml
+                └───cassandra.yml
+                └───dependencies.yml
+                └───repository.yml
