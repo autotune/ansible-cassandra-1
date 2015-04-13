@@ -1,0 +1,16 @@
+---
+- name: Apt-get Update
+  apt: update_cache=yes upgrade=dist
+
+- name: Install curl
+  apt: name=curl state=latest
+
+- name: Install Vim
+  apt: name=vim state=latest
+
+- name: Configure Vim as default
+  shell: update-alternatives --set editor /usr/bin/vim.basic
+
+- name: Drop opscenter config into /etc/opscenter/
+  template: src=opscenterd.j2 dest=/etc/opscenter/opscenterd.conf
+

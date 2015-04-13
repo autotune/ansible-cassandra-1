@@ -17,7 +17,7 @@
     - packages
 
 - name: Install Cassandra config file
-  template: src=cassandra-{{cassandra.version_branch}}.j2 dest=/etc/cassandra/cassandra.yaml
+  template: src=cassandra-{{datastax.version_branch}}.j2 dest=/etc/cassandra/cassandra.yaml
   tags:
     - configuration
 
@@ -27,7 +27,7 @@
   - configuration
 
 - name: Install Cassandra Java Config File
-  template: src=cassandra-{{cassandra.version_branch}}-env.j2 dest=/etc/cassandra/cassandra-env.yaml
+  template: src=cassandra-{{datastax.version_branch}}-env.j2 dest=/etc/cassandra/cassandra-env.yaml
   tags:
     - configuration
 

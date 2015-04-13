@@ -1,0 +1,5 @@
+- name: Configure DataStax DB Servers
+  hosts: ds_db
+  user: root
+  roles:
+    - ds_db
