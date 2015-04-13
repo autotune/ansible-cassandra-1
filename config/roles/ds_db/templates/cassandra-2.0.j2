@@ -1,3 +1,5 @@
+# Commented out properties that do not work with Datastax Version
+
 cluster_name: "{{ config.cluster_name }}"
 commitlog_directory: {{ config.commitlog_directory }}
 saved_caches_directory: {{ config.saved_caches_directory }}
@@ -21,7 +23,7 @@ key_cache_size_in_mb:
 key_cache_save_period: 14400
 row_cache_size_in_mb: 0
 row_cache_save_period: 0
-counter_cache_size_in_mb:
+#counter_cache_size_in_mb:
 #counter_cache_save_period: 7200
 commitlog_sync: periodic
 commitlog_sync_period_in_ms: 10000
