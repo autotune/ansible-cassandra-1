@@ -1,0 +1,5 @@
+- name: Configure DataStax Nodetool Server
+  hosts: ds_nodetool
+  user: root
+  roles:
+    - ds_nodetool

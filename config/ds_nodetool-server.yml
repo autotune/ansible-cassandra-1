@@ -1,4 +1,4 @@
-- name: Build DataStax Nodetool Node
+- name: Build Nodetool Node
   gather_facts: False
   hosts: localhost
   tasks:
@@ -13,7 +13,7 @@
         region: "{{ item.value.region }}"
         wait: yes
         state: present
-        group: ds_nodetool
+        group: nodetool
         count: "{{ item.value.node_count }}"
         files:
            /root/.ssh/authorized_keys: ~/.ssh/id_rsa.pub
