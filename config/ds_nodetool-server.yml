@@ -13,7 +13,7 @@
         region: "{{ item.value.region }}"
         wait: yes
         state: present
-        group: nodetool
+        group: ds_nodetool
         count: "{{ item.value.node_count }}"
         files:
            /root/.ssh/authorized_keys: ~/.ssh/id_rsa.pub

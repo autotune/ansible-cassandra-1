@@ -10,3 +10,6 @@
   register: cassandra_install
   tags:
     - packages
+
+- name: Drop opscenter config into /etc/opscenter/
+  template: src=opscenterd.j2 dest=/etc/opscenter/opscenterd.conf
