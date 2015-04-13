@@ -1,12 +1,19 @@
 ---
 cassandra:
-
   version: '2.1'
   version_branch: '2.1'
-
   dependencies:
     - 'openjdk-7-jre'
     - 'openjdk-7-jdk'
+
+
+datastax:
+  cass_version: '2.0.14'
+  dependencies:
+    - 'openjdk-7-jre'
+    - 'openjdk-7-jdk'
+  version: '2.0.14-1'
+  version_branch: '2.0'
 
 cassandra_1_2:
   repo: 'deb http://www.apache.org/dist/cassandra/debian 12x main'
@@ -16,6 +23,11 @@ cassandra_2_0:
 
 cassandra_2_1:
   repo: 'deb http://www.apache.org/dist/cassandra/debian 21x main'
+
+
+datastax_cass_2_0_14:
+  repo: 'deb http://debian.datastax.com/community stable main'
+
 
 config:
   cluster_name: 'MyCluster'
@@ -27,6 +39,7 @@ config:
   log_level: 'info'
   java_max_heap_size: '512M'
   java_max_heap_newsize: '100M'
+
 
 cluster_opts:
   iad_cluster:

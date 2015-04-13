@@ -1,0 +1,3 @@
+---
+- name: Drop opscenter cluster info into /etc/opscenter/cluster
+  template: src=cluster.j2 dest=/etc/opscenter/cluster/Default.conf

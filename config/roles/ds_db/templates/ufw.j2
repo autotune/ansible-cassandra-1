@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ufw allow 22/tcp
+{% for host in groups['ds_db'] %}
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 7000
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 9160
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 9042
+ufw allow from {{ hostvars[host]['rax_accessipv4'] }} to any port 7199
+{% endfor %}
+ufw --force enable

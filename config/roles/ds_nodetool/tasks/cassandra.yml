@@ -1,0 +1,15 @@
+---
+- name: Install Cassandra
+  apt: name=cassandra={{datastax.cass_version}} update-cache=yes force=yes state=present
+  register: cassandra_install
+  tags:
+    - packages
+
+- name: Install OpsCenter
+  apt: name=opscenter update-cache=yes force=yes state=present
+  register: cassandra_install
+  tags:
+    - packages
+
+- name: Drop opscenter config into /etc/opscenter/
+  template: src=opscenterd.j2 dest=/etc/opscenter/opscenterd.conf

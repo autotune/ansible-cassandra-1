@@ -1,0 +1,17 @@
+---
+# Needed for add-apt-repository
+- name: Install python-software-properties
+  apt: pkg=python-software-properties state=installed
+  tags:
+    - apt
+
+- name: Adds key for Datastax repository
+  apt_key: url=http://debian.datastax.com/debian/repo_key
+  tags:
+    - apt
+
+- name: Add Datastax 2.0.14 repository
+  apt_repository: repo='{{ datastax_cass_2_0_14.repo }}' state=present
+  when: datastax.cass_version == '2.0.14'
+  tags:
+    - apt
