@@ -1,0 +1,5 @@
+- name: Configure DataStax Nodetool Cluster IPs
+  hosts: ds_db
+  user: root
+  roles:
+    - ds_nodetool_ips

@@ -3,8 +3,11 @@
 #provision nodes
 ansible-playbook config/ds_nodetool-server.yml -f 20
 
-#configure nodes
+# configure nodes
 ansible-playbook -i scripts/rax.py config/ds_nodetool.yml -f 20
+
+# drop IP of cluster nodes in opscenter config
+#ansible-playbook -i scripts/rax.py config/ds_nodetool_ips.yml -f 20
 
 #ping them
 ansible -vvvv -u root -i scripts/rax.py ds_nodetool -m ping -f 20
