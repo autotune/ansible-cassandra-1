@@ -19,12 +19,16 @@ Installs and configures N number of Cassandra nodes in a cluster on Rackspace Pu
 
 ## Gotcha's and bugs
 1. if a node fails to build on the initial run, you can rerun the same prov.sh but will need to cleanup the directories and restart cassandra again
-``` ansible -vvvv -u root -i scripts/rax.py ds_db -m shell -a "rm -rf /var/lib/cassandra/*" -f 20
+```
+   ansible -vvvv -u root -i scripts/rax.py ds_db -m shell -a "rm -rf /var/lib/cassandra/*" -f 20
    ansible -vvvv -u root -i scripts/rax.py ds_db -m shell -a "service cassandra restart" -f 20
 ```
 
 ## Installation
-1. ``` bash prov.sh ```
+1. 
+```
+bash prov.sh
+```
 
 ## Directory structure
 ```
